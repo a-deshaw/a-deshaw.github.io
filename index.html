@@ -1,0 +1,348 @@
+<!--Declares the document type as HTML5 and specifies that the language of the page is English-->
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!-- Defines the character encoding for the HTML document page as UTF-8, ensuring proper display of text -->
+    <meta charset="UTF-8">
+    <!-- Configures the viewport for responsiveness across different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets title that appears on the browser tab. -->
+    <title>Amanda DeShaw - Software Developer Portfolio</title>
+
+    <!-- Imports Google Fonts:Playfair Display and Roboto with specific font weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+    <!--Begins the internal CSS for page styling -->
+    <style>
+        /* Define color variables for reuse */
+        :root{
+            --primary-color: #274039; /*dark green slate grey*/
+            --littledarker-primary-color: #425e56; /*dark green feldgrau*/
+            --secondary-color: #a8c8bf; /*green teal ash grey*/
+            --littledarker-secondary-color: #92ada6; /*cambridge blue*/
+            --accent-color: #96b1a9; /*little darker green teal ash grey*/
+            --text-color-lightbackground: #bdd8d0; /*little lighter green teal ash grey*/
+            --text-color-darkbackground: #fff; /*white*/
+            --light-sage-green-color: #96b1a9; /*little darker green teal ash grey*/
+            --deep-blue-green: #093A3E;
+            --dark-green: #053225;
+            --periwinkle-color: #52528c; 
+            --dark-blue-purple-color: #372554;
+            --dark-plum-color: #28112B;
+            --dark-purple-magenta-color: #231123;
+            --magenta: #4A2545;
+            --light-magenta: #824C71;
+            --light-pinkish-peach: #C49991;
+            --dusty-pink: #9D858D;
+            --black: #000;
+        }
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif; /* Use Roboto as the main font */
+            margin: 0; /* Remove default margins */
+            padding: 0; /* Remove default padding */
+            color: var(--text-color-darkbackground); /* Set text color to white */
+            background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 100%); /* Apply gradient background */
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+            line-height: 1.6; /* Set line height for better readability */
+        }
+
+        /* Darkens the background when the user scrolls beyond a threshold */
+        body.scroll-dark {
+            background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+
+        /* Header styling */
+        header {
+            background: var(--accent-color); /* Dark background for the header */
+            color: var(--text-color-darkbackground); /* White text color */
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Main title (h1) styling */
+        h1 {
+            font-family: 'Playfair Display', serif; /* Playfair Display font for headings */
+            margin: 0; /* No margin */
+            font-size: 3em;
+        }
+
+        /* Sub-heading (h2) styling */
+        h2 {
+            font-family: 'Playfair Display', serif; /* Playfair Display font for headings */
+            margin: 0; /* No margin */
+            font-size: 2em; /* Medium font size */
+            color: var(--text-color-lightbackground); /* Light blue color */
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        /* Sticky Navigation bar styling */
+        nav {
+            position: sticky; /* Sticks to the top of the viewport */
+            top: 0; /* Stays at the top */
+            background-color: var(--primary-color); /* Dark background */
+            color: var(--text-color-darkbackground); /* White text color */
+            padding: 10px 0; /* Add vertical padding */
+            text-align: center; /* Center navigation links */
+            z-index: 1000; /* Ensure it stays on top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Styling Navigation link */
+        nav a {
+            margin: 0 20px; /* Space out the links */
+            font-size: 1.2em; /* Slightly larger font */
+            color: var(--text-color-darkbackground); /* White text */
+            text-decoration: none; /* Remove underlines */
+            transition: color 0.3s; /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect for navigation links */
+        nav a:hover {
+            color: var(--littledarker-primary-color); /* Change color on hover */
+        }
+
+        /* Main content container */
+        main {
+            max-width: 1000px; /* Limit the width for readability */
+            margin: 20px auto; /* Center the main content */
+            padding: 30px; /* Add padding inside the content */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        }
+
+        /* Section styling with bottom margin */
+        section {
+            margin-bottom: 60px; /* Space between sections */
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 1.2em; /* Slightly larger font */
+            line-height: 1.6; /* Spacing between lines */
+        }
+
+        /* Unordered list (Skills section) styling */
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        /* List item styling for Skills section */
+        li {
+            background: var(--primary-color); /* Dark background for list items */
+            padding: 10px; /* Add padding */
+            margin: 5px 0; /* Space between list items */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 1.1em; /* Slightly larger font */
+        }
+
+        /* Project Cards styling */
+        .project {
+            display: flex; /* Flexbox for layout */
+            align-items: center; /* Center the content vertically */
+            margin-bottom: 20px; /* Space between project cards */
+            background-color: var(--secondary-color); /* Light teal background */
+            padding: 20px; /* Padding inside the card */
+            border-radius: 10px; /* Rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        /* Hover effect for project cards */
+        .project:hover {
+            transform: translateY(-5px); /* Slight lift effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+        }
+
+        /* Project image container styling */
+        .project-image {
+            width: 150px; /* Fixed width */
+            height: 150px; /* Fixed height */
+            margin-right: 20px; /* Space between image and text */
+            border-radius: 10px; /* Rounded corners for images */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Ensure images fit the container without distortion */
+        .project-image img {
+            width: 100%; /* Fill the width */
+            height: 100%; /* Fill the height */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        /* Project information styling */
+        .project-info {
+            flex: 1; /* Take up the remaining space */
+        }
+
+        /* Project title styling */
+        .project-title {
+            font-size: 1.5em; /* Larger font for titles */
+            margin-bottom: 10px; /* Space below the title */
+        }
+
+        /* Project description styling */
+        .project-description {
+            font-size: 1.1em; /* Slightly larger font for description */
+            line-height: 1.5; /* Spacing between lines */
+        }
+        
+        /* Contact Section styling */
+        .contact {
+            text-align: center; /* Center contact links */
+        }
+
+        /* Styling for contact buttons */
+        .contact a {
+            display: inline-block; /* Display links as blocks */
+            background-color: var(--secondary-color); /* Light blue background */
+            color: var(--primary-color); /* Dark text */
+            padding: 12px 30px; /* Add padding */
+            margin: 5px; /* Space between links */
+            border-radius: 30px; /* Rounded pill shape */
+            text-decoration: none; /* Remove underlines */
+            font-size: 1.2em; /* Slightly larger font */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        /* Hover effect for contact button links */
+        .contact a:hover {
+            background-color: var(--littledarker-secondary-color); /* Darken background on hover */
+        }
+
+        /* Footer styling */
+        footer {
+            /*background: var(--secondary-color);*/
+            color: var(--secondary-color); /* White text color */
+            padding: 20px; /* Add padding inside the footer */
+            text-align: center; /* Center footer text */
+            position: relative;
+            bottom: 0;
+            width: 100%; /* Full width footer */
+        }
+
+        /* Footer text styling */
+        footer p {
+            margin: 0; /* Remove default margin */
+            font-size: 0.9em; /* Smaller font size */
+        }
+        
+    </style>
+</head>
+    
+<body>
+    <header>
+        <!-- Displays the header with the main title and developer role -->
+        <h1>Amanda DeShaw</h1>
+        <h2>Software Developer</h2>   
+    </header>
+
+    <nav>
+        <!-- Sticky navigation links to sections -->
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate and dedicated software developer with a strong foundation in programming languages such as Java, C#, HTML, and Python. I focus on building innovative, high-quality solutions, continuously improving my skills, and delivering effective results. I am eager to learn new technologies and continuously improve my skills. Enthusiastic and confident computer science student. Sharp, quick learner; willing to get involved. Strength in analyzing, 
+researching, organizing, and problem solving. Excellent organizational and communication skills.
+            </p>        
+        </section>
+
+        <!-- Portfolio section with project cards -->
+        <section id="portfolio">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="project1.jpg" alt="Project 1">
+                    <!-- Placeholder image for project 1. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 1 Title</h3>
+                    <p class="project-description">Description of Project 1, including the key technologies used. </p>
+                    <a href="https://project1-link.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image">
+                    <img src="project2.jpg" alt="Project 2">
+                    <!-- Placeholder image for project 2. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 2 Title</h3>
+                    <p class="project-description">Description of Project 2, showcasing the features and tech stack used.</p>
+                    <a href="https://project2-link.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image">
+                    <img src="project3.jpg" alt="Project 3">
+                    <!-- Placeholder image for project 3. -->
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Project 3 Title</h3>
+                    <p class="project-description">Description of Project 3.</p>
+                    <a href="https://project3-link.com" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>C#</li>
+                <li>Python</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>SQL</li>
+                <li>Git</li>
+                <li>Agile Methodologies</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <!-- Placeholder text for the "Contact" section. -->
+            <a href="mailto:deshawamanda@gmail.com">Email me</a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">My LinkedIn</a>
+            <a href="https://github.com/a-deshaw" target="_blank">My GitHub</a>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Copyright information for the footer. -->
+        <p>© 2024 Amanda DeShaw</p>
+    </footer>
+
+    <script>
+        // Darken background as user scrolls down
+        window.addEventListener('scroll', function() {
+            const body = document.body;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const threshold = 300; // Threshold for background color change
+
+            if (scrollTop > threshold) {
+                body.classList.add('scroll-dark');
+            } else {
+                body.classList.remove('scroll-dark');
+            }
+        });
+    </script>
+</body>
+</html>
