@@ -68,3 +68,9 @@ header {
     width: 100%;
     pointer-events: none;
 }
+
+.sec {
+    position: relative;
+    background: #333;
+    padding: 100px;
+}
