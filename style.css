@@ -34,6 +34,29 @@ header {
     font-weight: 600;
 }
 
-.navigation a:hover {
+.navigation a:hover, .navigation a.active {
+    background: # ;
+    color: # ;
+}
 
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#text {
+    position: absolute;
+    font-size: 5cm;
+    color: # ;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
 }
