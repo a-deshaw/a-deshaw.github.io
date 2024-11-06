@@ -35,8 +35,8 @@ header {
 }
 
 .navigation a:hover, .navigation a.active {
-    background: # ;
-    color: # ;
+    background: #fff ;
+    color: #fff ;
 }
 
 .parallax{
@@ -50,7 +50,7 @@ header {
 #text {
     position: absolute;
     font-size: 5cm;
-    color: # ;
+    color: #fff ;
 }
 
 .parallax img {
